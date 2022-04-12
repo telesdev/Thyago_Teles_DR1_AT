@@ -7,14 +7,14 @@ using System.Text;
 
 namespace CsharpAT.Biblioteca.Repositorio
 {
-    public class PessoaRep
+    public class PessoaRep : IPessoaRep
     {
         private static string diretorio = "dir";
         private static string nomeArquivo = "aniversariantes.csv";
         private static string arquivo = Path.Combine(diretorio, nomeArquivo);
         private static StringBuilder csv = new StringBuilder();
 
-        private static List<Pessoa> Pessoas = new List<Pessoa>()
+        public static List<Pessoa> Pessoas = new List<Pessoa>()
         {
             new Pessoa(1, "Thyago", "Teles", DateTime.Parse("11/05/1989")),
             new Pessoa(2, "Candida", "Teles", DateTime.Parse("24/05/1962")),
@@ -40,7 +40,7 @@ namespace CsharpAT.Biblioteca.Repositorio
             }
         }
 
-        private static List<Pessoa> CriarLista()
+        public static List<Pessoa> CriarLista()
         {
             List<Pessoa> arquivoEmLista = new List<Pessoa>();
 
@@ -74,7 +74,7 @@ namespace CsharpAT.Biblioteca.Repositorio
 
             if (linqNiver.Count >= 1)
             {
-                Console.WriteLine(">>>>> Pessoas que fazem aniversário hoje:r\n");
+                Console.WriteLine(">>>>> Pessoas que fazem aniversário hoje:\r\n");
 
                 foreach (var aniversariantes in linqNiver)
                 {
@@ -87,7 +87,7 @@ namespace CsharpAT.Biblioteca.Repositorio
             }
         }
 
-        public static void PesquisarPessoa()
+        public void PesquisarPessoa()
         {
             List<Pessoa> arquivoEmLista = CriarLista();
 
@@ -141,7 +141,7 @@ namespace CsharpAT.Biblioteca.Repositorio
 
         }
 
-        public static void AdicionarPessoa()
+        public void AdicionarPessoa()
         {
             List<Pessoa> arquivoEmLista = CriarLista();
 
@@ -194,7 +194,7 @@ namespace CsharpAT.Biblioteca.Repositorio
             }
         }
 
-        public static void EditarPessoa()
+        public void EditarPessoa()
         {
             List<Pessoa> arquivoEmLista = CriarLista();
 
@@ -273,7 +273,7 @@ namespace CsharpAT.Biblioteca.Repositorio
             }
         }
 
-        public static void DeletarPessoa()
+        public void DeletarPessoa()
         {
             List<Pessoa> arquivoEmLista = CriarLista();
 

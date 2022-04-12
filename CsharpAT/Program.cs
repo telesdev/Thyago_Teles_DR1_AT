@@ -7,6 +7,7 @@ namespace CsharpAT
     {
         static void Main(string[] args)
         {
+
             PessoaRep.CriarArquivo();          
             PessoaRep.MostraPessoas();
             GerenciarAniversarios();
@@ -15,6 +16,7 @@ namespace CsharpAT
         private static void GerenciarAniversarios()
         {
             int opcao;
+            PessoaRep pessoaRep = new PessoaRep();
 
             do
             {
@@ -32,16 +34,16 @@ namespace CsharpAT
                     switch (opcao)
                     {
                         case 1:
-                            PessoaRep.PesquisarPessoa();
+                            pessoaRep.PesquisarPessoa();
                             break;
                         case 2:
-                            PessoaRep.AdicionarPessoa();
+                            pessoaRep.AdicionarPessoa();
                             break;
                         case 3:
-                            PessoaRep.EditarPessoa();
+                            pessoaRep.EditarPessoa();
                             break;
                         case 4:
-                            PessoaRep.DeletarPessoa();
+                            pessoaRep.DeletarPessoa();
                             break;
                         case 0:
                             Console.WriteLine("\r\nVocê encerrou a sessão.");
