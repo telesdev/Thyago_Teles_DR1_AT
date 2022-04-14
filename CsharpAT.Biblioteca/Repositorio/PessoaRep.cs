@@ -145,6 +145,7 @@ namespace CsharpAT.Biblioteca.Repositorio
         {
             List<Pessoa> arquivoEmLista = CriarLista();
 
+            Console.Clear();
             Console.WriteLine("\r\nVocê escolheu **ADICIONAR NOVA PESSOA*\r\n");
 
             Console.Write("Nome: ");
@@ -241,11 +242,11 @@ namespace CsharpAT.Biblioteca.Repositorio
                                     {
                                         csv.Append($"{pessoa.Id};{pessoa.Nome};{pessoa.Sobrenome};{pessoa.DataNascimento}\r\n");
                                     }
-                                    csv.Append($"{listaDelete.ToList().Last().Id+1};{nomeEdit};{sobrenomeEdit};{dataNascimentoEdit}");
+                                    csv.Append($"{listaDelete.ToList().Last().Id+1};{nomeEdit};{sobrenomeEdit};{dataNascimentoEdit}\r\n");
                                 }
                                 else
                                 {
-                                    csv.Append($"{1};{nomeEdit};{sobrenomeEdit};{dataNascimentoEdit}");
+                                    csv.Append($"{1};{nomeEdit};{sobrenomeEdit};{dataNascimentoEdit}\r\n");
                                 }
                                 File.WriteAllText(arquivo, csv.ToString());
                                 Console.WriteLine("\r\nEntrada editada com sucesso!");
